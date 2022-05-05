@@ -141,6 +141,10 @@
   <ItemGroup>
     <ClCompile Include="Convergence methods.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Grad-descent.h" />
+    <ClInclude Include="Matrixfun.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
