@@ -7,15 +7,15 @@ public:
     int col = 0;
     float** m;
     mat(int r, int c);
-    mat operator =(mat n)
+    mat operator =(mat M1)
     {
         int i, j;
-        mat temp(n.row, n.col);
-        for (i = 0; i < n.row; i++)
+        mat temp(M1.row, M1.col);
+        for (i = 0; i < M1.row; i++)
         {
-            for (j = 0; j < n.col; j++)
+            for (j = 0; j < M1.col; j++)
             {
-                temp.m[i][j] = n.m[i][j];
+                temp.m[i][j] = M1.m[i][j];
                 //cout << n.m[i][j] << "->" << temp.m[i][j] << endl;
             }
         }
@@ -79,15 +79,15 @@ mat::mat(int r, int c)
         m[i] = new float[col];
     }
 }
-mat T(mat M1)
+mat T(mat* M1)
 {
-    mat M2(M1.col, M1.row);
+    mat M2(M1->col, M1->row);
     int i, j;
-    for (i = 0; i < M1.col; i++)
+    for (i = 0; i < M1->col; i++)
     {
-        for (j = 0; j < M1.row; j++)
+        for (j = 0; j < M1->row; j++)
         {
-            M2.m[i][j] = M1.m[j][i];
+            M2.m[i][j] = M1->m[j][i];
         }
     }
     return M2;

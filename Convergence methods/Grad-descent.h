@@ -10,9 +10,7 @@ float f(mat w, mat x, mat y)
 mat grad(mat w, mat x, mat y)
 {
     int i, j;
-    //cout << "reporting sir " << endl;
-    mat opi = (w * x - y) * T(x);             //w is a row vec, x is a column vec, y is a row vec
-    //cout << "The gradient: " << endl;
+    mat opi = (w * x - y) * T(&x);             //w is a row vec, x is a column vec, y is a row vec
     mat opf(w.row, w.col);
     for (i = 0; i < w.col; i++)
     {

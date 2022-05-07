@@ -26,5 +26,8 @@
     <ClInclude Include="Grad-descent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BFGS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

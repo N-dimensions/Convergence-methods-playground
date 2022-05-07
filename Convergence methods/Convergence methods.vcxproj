@@ -142,6 +142,7 @@
     <ClCompile Include="Convergence methods.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BFGS.h" />
     <ClInclude Include="Grad-descent.h" />
     <ClInclude Include="Matrixfun.h" />
   </ItemGroup>
