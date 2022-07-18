@@ -1,5 +1,4 @@
 #include "Matrixfun.h"
-using namespace std;
 float f(mat w, mat x, mat y)
 {
     float func;
@@ -44,15 +43,15 @@ int graddes(mat* w, mat* x, mat* y, int ite, float stpsz, bool st)
         sub(w, mult(stpsz, grad(*w, *x, *y)));
         if (itno <= ite)
         {
-            cout << "Iteration number " << itno << " results: " << endl;
-            cout << "=====================================================" << endl << endl;
-            cout << "Cost equals " << f(*w, *x, *y) << endl;
-            cout << "New weights: " << endl;
+           std::cout << "Iteration number " << itno << " results: " << std::endl;
+           std::cout << "=====================================================" << std::endl << std::endl;
+           std::cout << "Cost equals " << f(*w, *x, *y) << std::endl;
+           std::cout << "New weights: " << std::endl;
             for (i = 0; i < w->col; i++)
             {
-                cout << w->m[0][i] << "\t";
+                std::cout << w->m[0][i] << "\t";
             }
-            cout << endl << endl << endl << endl;
+            std::cout << std::endl << std::endl << std::endl << std::endl;
         }
     }
     return 0;

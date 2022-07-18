@@ -1,12 +1,30 @@
 #include <iostream>
-using namespace std;
 class mat
 {
 public:
     int row = 0;
     int col = 0;
     float** m;
-    mat(int r, int c);
+    mat(int r, int c)
+    {
+        int i;
+        row = r;
+        col = c;
+        m = new float* [row];
+        for (i = 0; i < row; i++)
+        {
+            m[i] = new float[col];
+        }
+    }
+    ~mat()
+    {
+        for (int i = 0; i < row; i++)
+        {
+            delete[] m[i];
+        }
+        delete[] m;
+        //std::cout << "Memory deleted..." << std::endl;
+    }
     mat operator =(mat M1)
     {
         int i, j;
@@ -68,17 +86,6 @@ public:
         return M3;
     }
 };
-mat::mat(int r, int c)
-{
-    int i;
-    row = r;
-    col = c;
-    m = new float* [row];
-    for (i = 0; i < row; i++)
-    {
-        m[i] = new float[col];
-    }
-}
 mat T(mat* M1)
 {
     mat M2(M1->col, M1->row);

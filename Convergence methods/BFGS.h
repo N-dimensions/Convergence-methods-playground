@@ -1,5 +1,4 @@
 #include "Grad-descent.h"
-using namespace std;
 float fi(mat w, mat x, mat y)
 {
     float func;
@@ -102,7 +101,7 @@ int BFGSd(mat* w, mat* x, mat* y, int ite, bool st)
         //Finding direction
         P = fdirc(Binv, Grad);
         //Finding stepsize
-        cout<<stpszfd(x, y, &P, &Grad, *w);
+        std::cout<<stpszfd(x, y, &P, &Grad, *w);
     }
     return 0;
 }
